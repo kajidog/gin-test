@@ -1,0 +1,9 @@
+Dockerfile
+api/openapi.yaml
+go.mod
+go/README.md
+go/api_default.go
+go/model__example_get_200_response.go
+go/model__new_endpoint_post_201_response.go
+go/model__new_endpoint_post_request.go
+go/routers.go

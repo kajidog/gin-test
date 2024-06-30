@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /example:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_example_get_200_response'
+          description: Successful response
+      summary: Get example
+  /new-endpoint:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_new_endpoint_post_request'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_new_endpoint_post_201_response'
+          description: Created
+      summary: Create something
+components:
+  schemas:
+    _new_endpoint_post_request:
+      properties:
+        name:
+          example: New Item
+          type: string
+      type: object
+    _example_get_200_response:
+      example:
+        message: "Hello, world!"
+      properties:
+        message:
+          example: "Hello, world!"
+          type: string
+      type: object
+    _new_endpoint_post_201_response:
+      example:
+        id: 1
+      properties:
+        id:
+          example: 1
+          type: integer
+      type: object

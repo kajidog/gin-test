@@ -1,0 +1,9 @@
+services:
+  gotest:
+    build:
+      context: ./api
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./api:/go/src
+    ports:
+      - 8080:8080

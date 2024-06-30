@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 1.0.0
+
+paths:
+  /example:
+    get:
+      summary: Get example
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, world!
+  /new-endpoint:
+    post:
+      summary: Create something
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: New Item
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
